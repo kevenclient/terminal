@@ -2,7 +2,7 @@ import React from 'react'
 import IAppProps from './interfaces/app-props'
 import keyboardEvents from './composables/keyboard-events'
 import Commands from './components/Commands'
-import Indicator from './components/Indicator'
+import Command from './components/Command'
 import { connect } from 'react-redux'
 import { join } from 'lodash'
 
@@ -23,15 +23,7 @@ class App extends React.Component<IAppProps> {
 
         return <div className={classes}>
             <Commands commands={terminal.commands}/>
-            <div>
-                <Indicator/>
-                <span className='font-bold text-[#37c565]'>guest@get-go.dev:</span>
-                <span className='font-bold text-[#398fe6]'>~</span>
-                <span className='font-bold mr-2'>$</span>
-                <span className='break-all'>
-                    {terminal.command}
-                </span>
-            </div>
+            <Command name={terminal.command}/>
         </div>
     }
 }
