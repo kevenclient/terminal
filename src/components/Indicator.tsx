@@ -8,7 +8,8 @@ interface IProps {
 
 const component = (props: IProps) => {
     let classes = [
-        'inline-block', 'w-5', 'text-center', 'font-bold', 'font-sans',
+        'inline-flex', 'items-center', 'justify-center',
+        'font-bold', 'font-sans', 'w-5',
     ]
 
     let symbol
