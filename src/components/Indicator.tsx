@@ -1,16 +1,19 @@
 import React from 'react'
-import decoration from './../interfaces/decoration'
 import indicator from './../enums/indicator'
 import { concat, join } from 'lodash'
 
-function Decoration(prop: decoration) {
+interface IProps {
+    type?: indicator
+}
+
+const component = (props: IProps) => {
     let classes = [
-        'inline-block', 'w-5', 'text-center', 'font-bold',
+        'inline-block', 'w-5', 'text-center', 'font-bold', 'font-sans',
     ]
 
-    let symbol;
+    let symbol
 
-    switch (prop.indicator) {
+    switch (props.type) {
         case indicator.SUCCEEDED:
             symbol = '●'
             classes = concat(classes, [
@@ -36,4 +39,4 @@ function Decoration(prop: decoration) {
     </span>
 }
 
-export default Decoration
+export default component
