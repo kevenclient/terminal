@@ -1,6 +1,6 @@
-enum Indicator {
+enum Status {
     SUCCEEDED = 'SUCCEEDED',
     FAILED = 'FAILED',
 }
 
-export default Indicator
+export default Status

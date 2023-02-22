@@ -1,9 +1,9 @@
 import React from 'react'
-import indicator from './../enums/indicator'
+import status from '../enums/status'
 import { concat, join } from 'lodash'
 
 interface IProps {
-    type?: indicator
+    type?: status
 }
 
 const component = (props: IProps) => {
@@ -15,13 +15,13 @@ const component = (props: IProps) => {
     let symbol
 
     switch (props.type) {
-        case indicator.SUCCEEDED:
+        case status.SUCCEEDED:
             symbol = '●'
             classes = concat(classes, [
                 'text-[#2882a6]', 'text-[18px]',
             ])
             break
-        case indicator.FAILED:
+        case status.FAILED:
             symbol = '⊗'
             classes = concat(classes, [
                 'text-[#e7474f]', 'text-[12px]',
@@ -35,7 +35,7 @@ const component = (props: IProps) => {
             break
     }
 
-    return <span className={join(classes, ' ')}>
+    return <span className={ join(classes, ' ') }>
         { symbol }
     </span>
 }

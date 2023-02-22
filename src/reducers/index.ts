@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
-import terminal from './terminal'
+import command from './command'
+import history from './history'
 
 export default combineReducers({
-    terminal,
+    command, history,
 })

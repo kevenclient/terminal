@@ -1,7 +1,9 @@
-import ITerminal from './terminal'
+import ICommand from './command'
+import IHistory from './history'
 
 interface AppProps {
-    terminal: ITerminal
+    command: ICommand
+    history: IHistory
 }
 
 export default AppProps
