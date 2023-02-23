@@ -4,8 +4,8 @@ import Command from './Command'
 
 const component = (props: IHistory) => {
     return <React.Fragment>
-        { props.commands.map((command, index) => <Command key={ index }
-            input={ command.input } status={ command.status }/>) }
+        { props.commands.map((command, index) =>
+            <Command key={ index } { ...command }/>) }
     </React.Fragment>
 }
 

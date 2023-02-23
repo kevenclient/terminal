@@ -1,13 +1,19 @@
 import ICommand from './../interfaces/command'
-import store from './../store'
-import status from '../enums/status'
+import status from './../enums/status'
 import commands from './../json/commands.json'
-import { HISTORY_PUSH } from './../actions'
-import { get } from 'lodash'
+import history  from './history'
+import { get, trim, isEmpty } from 'lodash'
 
 const execute = (command: ICommand) => {
-    const output = get(commands, command.input)
-    
+    const input = trim(command.input)
+
+    if (isEmpty(input)) {
+        history.push(command)
+        return
+    }
+
+    const output = get(commands, input)
+
     command = output ? {
         ...command, output,
         status: status.SUCCEEDED,
@@ -17,9 +23,7 @@ const execute = (command: ICommand) => {
         status: status.FAILED,
     }
 
-    store.dispatch({
-        type: HISTORY_PUSH, command,
-    })
+    history.push(command)
 }
 
 const events = {

@@ -11,12 +11,13 @@ export default function filter(
 ): IHistory {
     switch (action.type) {
         case HISTORY_PUSH:
+            const commands = concat(
+                state.commands,
+                action.command,
+            )
+
             return {
-                ...state,
-                commands: concat(
-                    state.commands,
-                    action.command,
-                )
+                ...state, commands,
             }
         default:
             return state
