@@ -1,8 +1,10 @@
 import ICommand from './../interfaces/command'
 import status from './../enums/status'
-import commands from './../json/commands.json'
 import history  from './history'
-import { get, trim, isEmpty } from 'lodash'
+import Commands from './../components/Commands'
+import Error from './../components/Error'
+import { isEmpty, get, trim } from 'lodash'
+import { renderToString } from 'react-dom/server'
 
 const execute = (command: ICommand) => {
     const input = trim(command.input)
@@ -12,14 +14,20 @@ const execute = (command: ICommand) => {
         return
     }
 
-    const output = get(commands, input)
+    const output = get({
+        help: renderToString(<Commands/>)
+    }, input)
+
+    const error = renderToString(
+        <Error input={ input }/>
+    )
 
     command = output ? {
         ...command, output,
         status: status.SUCCEEDED,
     } : {
         ...command,
-        output: `Command '${command.input}' not found`,
+        output: error,
         status: status.FAILED,
     }
 

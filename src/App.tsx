@@ -3,6 +3,7 @@ import IAppProps from './interfaces/app-props'
 import keyboardEvents from './composables/keyboard-events'
 import Command from './components/Command'
 import History from './components/History'
+import Banner from './components/Banner'
 import { connect } from 'react-redux'
 import { join } from 'lodash'
 
@@ -22,6 +23,7 @@ class App extends React.Component<IAppProps> {
         const { command, history } = this.props
 
         return <div className={ classes }>
+            <Banner/>
             <History commands={ history.commands }/>
             <Command input={ command.input }/>
         </div>

@@ -1,5 +1,5 @@
 import ICommand from '../interfaces/command'
-import { dropRight, join, } from 'lodash'
+import { dropRight, join } from 'lodash'
 
 import {
     KEYBOARD_EVENT_KEYDOWN,

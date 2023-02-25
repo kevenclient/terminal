@@ -3,6 +3,10 @@ import ICommand from './../interfaces/command'
 import Indicator from './Indicator'
 
 const component = (props: ICommand) => {
+    const output = {
+        __html: props.output as string,
+    }
+
     return <React.Fragment>
         <div className='font-bold'>
             <Indicator type={ props.status }/>
@@ -13,9 +17,7 @@ const component = (props: ICommand) => {
                 { props.input }
             </span>
         </div>
-        <div className='ml-5 my-2'>
-            { props.output }
-        </div>
+        <div className='ml-5 my-2' dangerouslySetInnerHTML={ output }/>
     </React.Fragment>
 }
 
