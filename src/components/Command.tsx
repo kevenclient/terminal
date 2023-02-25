@@ -10,14 +10,14 @@ const component = (props: ICommand) => {
     return <React.Fragment>
         <div className='font-bold'>
             <Indicator type={ props.status }/>
-            <span className='leading-8 text-[#37c565]'>guest@get-go.dev:</span>
-            <span className='leading-8 text-[#398fe6]'>~</span>
-            <span className='leading-8 mr-2'>$</span>
-            <span className='leading-8 font-normal break-all'>
+            <span className='text-[#37c565]'>guest@get-go.dev:</span>
+            <span className='text-[#398fe6]'>~</span>
+            <span className='mr-2'>$</span>
+            <span className='font-normal break-all'>
                 { props.input }
             </span>
         </div>
-        <div className='ml-5 my-2' dangerouslySetInnerHTML={ output }/>
+        <div className='ml-5 mt-1' dangerouslySetInnerHTML={ output }/>
     </React.Fragment>
 }
 

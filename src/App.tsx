@@ -16,14 +16,17 @@ class App extends React.Component<IAppProps> {
 
     render() {
         const classes = join([
-            'min-h-screen', 'font-mono', 'bg-[#1e1e1e]',
-            'text-[#cccccc]', 'p-5',
+            'min-h-screen', 'bg-[#1e1e1e]', 'font-mono',
+            'leading-8', 'text-[#cccccc]', 'p-5',
         ], ' ')
 
         const { command, history } = this.props
 
         return <div className={ classes }>
             <Banner/>
+            <span className='block mt-3'>
+                Type "help" to list all available commands
+            </span>
             <History commands={ history.commands }/>
             <Command input={ command.input }/>
         </div>

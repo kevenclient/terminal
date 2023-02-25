@@ -559,11 +559,6 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
 .ml-4 {
   margin-left: 1rem;
 }
@@ -574,6 +569,18 @@ video {
 
 .mr-2 {
   margin-right: 0.5rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
+.block {
+  display: block;
 }
 
 .inline-flex {
@@ -628,6 +635,10 @@ video {
   padding-bottom: 0.25rem;
 }
 
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
 .pl-4 {
   padding-left: 1rem;
 }
@@ -674,6 +685,10 @@ video {
 
 .leading-none {
   line-height: 1;
+}
+
+.leading-normal {
+  line-height: 1.5;
 }
 
 .text-\[\#27ad4f\] {
