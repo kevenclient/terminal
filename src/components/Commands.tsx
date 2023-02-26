@@ -1,7 +1,8 @@
 import React from 'react'
+import ICommands from './../interfaces/commands'
 
 const component = () => {
-    const commands = {
+    const commands: ICommands = {
         'projects': 'List all project ideas',
         'help': 'List all available commands',
     }

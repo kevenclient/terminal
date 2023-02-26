@@ -1,12 +1,9 @@
 import React from 'react'
-import status from '../enums/status'
+import IIndicator from './../interfaces/indicator'
+import status from './../enums/status'
 import { concat, join } from 'lodash'
 
-interface IProps {
-    type?: status
-}
-
-const component = (props: IProps) => {
+const component = (props: IIndicator) => {
     let classes = [
         'inline-flex', 'items-center', 'justify-center',
         'font-bold', 'font-sans', 'leading-none', 'w-5',

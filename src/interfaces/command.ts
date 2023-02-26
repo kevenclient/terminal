@@ -1,4 +1,4 @@
-import status from '../enums/status'
+import status from './../enums/status'
 
 interface Command {
     input: string

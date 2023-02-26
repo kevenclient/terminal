@@ -1,11 +1,11 @@
-import ICommand from '../interfaces/command'
+import ICommand from './../interfaces/command'
 import { dropRight, join } from 'lodash'
 
 import {
     KEYBOARD_EVENT_KEYDOWN,
     KEYDOWN_BACKSPACE,
     RESET_COMMAND_STORE,
-} from '../actions'
+} from './../actions'
 
 const initState: ICommand = {
     input: '',
