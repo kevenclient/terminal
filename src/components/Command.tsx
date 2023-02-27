@@ -1,6 +1,7 @@
 import React from 'react'
 import ICommand from './../interfaces/command'
 import Indicator from './Indicator'
+import { isEmpty } from 'lodash'
 
 const component = (props: ICommand) => {
     const output = {
@@ -16,6 +17,9 @@ const component = (props: ICommand) => {
             <span className='font-normal break-all'>
                 { props.input }
             </span>
+            { isEmpty(props.status) &&
+                <span>█</span>
+            }
         </div>
         <div className='ml-5 mt-1' dangerouslySetInnerHTML={ output }/>
     </React.Fragment>

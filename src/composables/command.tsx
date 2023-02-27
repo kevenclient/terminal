@@ -11,7 +11,10 @@ const execute = (command: ICommand) => {
     const input = trim(command.input)
 
     if (isEmpty(input)) {
-        history.push(command)
+        history.push({
+            ...command,
+            status: status.TYPING,
+        })
         return
     }
 

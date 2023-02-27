@@ -1,4 +1,5 @@
 enum Status {
+    TYPING = 'TYPING',
     SUCCEEDED = 'SUCCEEDED',
     FAILED = 'FAILED',
 }
