@@ -559,6 +559,15 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
 .ml-4 {
   margin-left: 1rem;
 }
@@ -579,16 +588,16 @@ video {
   margin-top: 0.75rem;
 }
 
-.block {
-  display: block;
-}
-
 .inline-flex {
   display: inline-flex;
 }
 
 .table {
   display: table;
+}
+
+.grid {
+  display: grid;
 }
 
 .min-h-screen {
@@ -605,6 +614,10 @@ video {
 
 .justify-center {
   justify-content: center;
+}
+
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .break-all {
@@ -729,4 +742,8 @@ video {
 .text-\[\#e7474f\] {
   --tw-text-opacity: 1;
   color: rgb(231 71 79 / var(--tw-text-opacity));
+}
+
+.underline {
+  text-decoration-line: underline;
 }

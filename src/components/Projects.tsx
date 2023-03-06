@@ -1,24 +1,26 @@
 import React from 'react'
+import ProgressBar from './ProgressBar'
 
 const component = () => {
     const projects = [
         {
             name: 'Kakeibo',
             description: `
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                This application will help you capture all your transactions
+                and provide an accurate picture of your finances. Therefore you can
+                easily identify your spending pattern.
             `,
             repository: 'https://github.com/kevenclient/kakeibo',
-            progress: 45,
+            progress: 25,
         },
         {
             name: 'Argus',
             description: `
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                This application enable you share and collect mobile camera
+                input with real-time object detection.
             `,
             repository: 'https://github.com/kevenclient/argus',
-            progress: 0,
+            progress: 50,
         },
     ]
 
@@ -33,8 +35,11 @@ const component = () => {
                         <td className='text-[#27ad4f] align-top'>
                             { project.name }
                         </td>
-                        <td className='pl-4 pb-2'>
+                        <td className='pl-4'>
                             { project.description }
+                            <div className='my-4'>
+                                <ProgressBar value={project.progress} />
+                            </div>
                         </td>
                     </tr>
                 }) }

@@ -24,9 +24,18 @@ class App extends React.Component<IAppProps> {
 
         return <div className={ classes }>
             <Banner/>
-            <span className='block mt-3'>
-                Type "help" to list all available commands
-            </span>
+            <div className='grid leading-normal gap-2 mt-3'>
+                <span className='break-all'>
+                    Type "help" to list all available commands
+                </span>
+                <div className='break-all'>
+                    For more information please visit
+                    <a href='https://github.com/kevenclient/terminal' target='_blank'
+                        rel='noreferrer' className='underline ml-2'>
+                        https://github.com/kevenclient/terminal
+                    </a>
+                </div>
+            </div>
             <History commands={ history.commands }/>
             <Command input={ command.input }/>
         </div>
