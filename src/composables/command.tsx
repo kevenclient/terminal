@@ -4,7 +4,7 @@ import history  from './history'
 import Commands from './../components/Commands'
 import Projects from './../components/Projects'
 import Error from './../components/Error'
-import { isEmpty, get, trim } from 'lodash'
+import { isEmpty, isEqual, get, trim } from 'lodash'
 import { renderToString } from 'react-dom/server'
 
 const execute = (command: ICommand) => {
@@ -15,6 +15,11 @@ const execute = (command: ICommand) => {
             ...command,
             status: status.TYPING,
         })
+        return
+    }
+
+    if (isEqual(input, 'clear')) {
+        history.clear()
         return
     }
 

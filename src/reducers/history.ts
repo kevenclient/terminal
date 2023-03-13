@@ -1,5 +1,5 @@
 import IHistory from './../interfaces/history'
-import { HISTORY_PUSH } from './../actions'
+import { HISTORY_PUSH, HISTORY_CLEAR } from './../actions'
 import { concat } from 'lodash'
 
 const initState: IHistory = {
@@ -18,6 +18,8 @@ export default function filter(
                     action.command,
                 ),
             }
+        case HISTORY_CLEAR:
+            return initState
         default:
             return state
     }

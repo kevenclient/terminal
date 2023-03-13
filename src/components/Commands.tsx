@@ -3,6 +3,7 @@ import ICommands from './../interfaces/commands'
 
 const component = () => {
     const commands: ICommands = {
+        'clear': 'Clear terminal screen',
         'projects': 'List all project ideas',
         'help': 'List all available commands',
     }
